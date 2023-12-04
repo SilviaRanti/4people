@@ -1,7 +1,7 @@
 <!-- Navigation -->
 <nav>
   <a href="{{ url('index.html') }}" class="logo text-dark">
-    <img src="{{ asset('images/logo/logo.jpg') }}" class="logo-header" alt="4People Studio Logo">
+    <img src="{{ asset('user/images/logo/logo.jpg') }}" class="logo-header" alt="4People Studio Logo">
     4People Studio
   </a>
   <ul>

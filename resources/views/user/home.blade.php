@@ -10,7 +10,7 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active" style="height: 800px;">
-          <img src="{{asset('images/background/bg-header.jpg')}}" class="d-block w-100" alt="...">
+          <img src="{{asset('user/images/background/bg-header.jpg')}}" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h5>First slide label</h5>
             <p>Some representative placeholder content for the first slide.</p>
@@ -25,7 +25,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="{{asset('images/background/bg-header2.jpeg')}}" class="d-block w-100" alt="...">
+          <img src="{{asset('user/images/background/bg-header2.jpeg')}}" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h5>Third slide label</h5>
             <p>Some representative placeholder content for the third slide.</p>
@@ -47,21 +47,21 @@
   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
     <div class="carousel-inner">
       <div class="carousel-item active carousel-wrapper">
-        <img src="{{asset('images/background/bg-header.jpg')}}" class="d-block w-100 h-100" alt="...">
+        <img src="{{asset('user/images/background/bg-header.jpg')}}" class="d-block w-100 h-100" alt="...">
         <div class="carousel-caption">
           <h1>Capturing Timeless Moments</h1>
           <p>Cherish the joy, love, and laughter of friends moments that last a lifetime.</p>
         </div>
       </div>
       <div class="carousel-item carousel-wrapper">
-        <img src="{{asset('images/background/bg-header2.jpg')}}" class="d-block w-100 h-100" alt="...">
+        <img src="{{asset('user/images/background/bg-header2.jpg')}}" class="d-block w-100 h-100" alt="...">
         <div class="carousel-caption">
           <h1>Family Bonds, Forever Strong</h1>
           <p>Discover the beauty of togetherness and the strength found in family connections.</p>
         </div>
       </div>
       <div class="carousel-item carousel-wrapper">
-        <img src="{{asset('images/background/bg-header3.jpeg')}}" class="d-block w-100 h-100" alt="...">
+        <img src="{{asset('user/images/background/bg-header3.jpeg')}}" class="d-block w-100 h-100" alt="...">
         <div class="carousel-caption">
           <h1>Celebrating Family Love</h1>
           <p>Capture the warmth and joy that family brings into every frame, creating lasting memories.</p>
@@ -79,7 +79,7 @@
   <article class="row">
     <div class="col-4">
       <div class="wrapper">
-        <img src="{{ asset('images/services/baby-born.jpeg') }}" alt="baby-born">
+        <img src="{{ asset('user/images/services/baby-born.jpeg') }}" alt="baby-born">
         <div class="text">
           <h3>Newborn</h3>
           <p>Abadikan momen indah kelahiran bayi Anda dengan foto eksklusif kami. Kami menciptakan potret penuh kasih sayang, menangkap kepolosan dan pesona si kecil.</p>
@@ -89,7 +89,7 @@
 
     <div class="col-4">
       <div class="wrapper">
-        <img src="{{ asset('images/services/graduation.jpeg') }}" alt="graduation">
+        <img src="{{ asset('user/images/services/graduation.jpeg') }}" alt="graduation">
         <div class="text">
           <h3>Graduation</h3>
           <p>Catat momen kelulusan Anda dengan foto yang berkesan. Kami mengabadikan kebahagiaan dan prestasi Anda dalam setiap detail, menciptakan kenangan yang abadi.</p>
@@ -99,7 +99,7 @@
 
     <div class="col-4">
       <div class="wrapper">
-        <img src="{{ asset('images/services/prewed.jpeg') }}" alt="prewed">
+        <img src="{{ asset('user/images/services/prewed.jpeg') }}" alt="prewed">
         <div class="text">
           <h3>Prewedding</h3>
           <p>Rayakan cinta Anda dalam gaya yang unik dan indah. Kami mengabadikan momen-momen berharga sebelum pernikahan Anda, menciptakan kisah cinta yang timeless.</p>

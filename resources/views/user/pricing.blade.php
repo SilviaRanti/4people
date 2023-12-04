@@ -4,21 +4,21 @@
   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
     <div class="carousel-inner">
       <div class="carousel-item active carousel-wrapper">
-        <img src="{{asset('images/background/bg-header.jpg')}}" class="d-block w-100 h-100" alt="...">
+        <img src="{{asset('user/images/background/bg-header.jpg')}}" class="d-block w-100 h-100" alt="...">
         <div class="carousel-caption">
           <h1>Capturing Timeless Moments</h1>
           <p>Cherish the joy, love, and laughter of friends moments that last a lifetime.</p>
         </div>
       </div>
       <div class="carousel-item carousel-wrapper">
-        <img src="{{asset('images/background/bg-header2.jpg')}}" class="d-block w-100 h-100" alt="...">
+        <img src="{{asset('user/images/background/bg-header2.jpg')}}" class="d-block w-100 h-100" alt="...">
         <div class="carousel-caption">
           <h1>Family Bonds, Forever Strong</h1>
           <p>Discover the beauty of togetherness and the strength found in family connections.</p>
         </div>
       </div>
       <div class="carousel-item carousel-wrapper">
-        <img src="{{asset('images/background/bg-header3.jpeg')}}" class="d-block w-100 h-100" alt="...">
+        <img src="{{asset('user/images/background/bg-header3.jpeg')}}" class="d-block w-100 h-100" alt="...">
         <div class="carousel-caption">
           <h1>Celebrating Family Love</h1>
           <p>Capture the warmth and joy that family brings into every frame, creating lasting memories.</p>

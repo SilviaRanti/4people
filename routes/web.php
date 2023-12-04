@@ -13,20 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// route untuk user
-Route::get('/', function () {
-    return view('user.home');
-})->name('user.home');
+// user route
+Route::prefix('/')->name('user.')->group(function () {
+    Route::get('/', function () {
+        return view('user.home');
+    })->name('home');
 
-Route::get('/about', function () {
-    return view('user.about');
-})->name('user.about');
+    // About route
+    Route::get('about', function () {
+        return view('user.about');
+    })->name('about');
 
-Route::get('/pricing', function () {
-    return view('user.pricing');
-})->name('user.pricing');
+    // Pricing route
+    Route::get('pricing', function () {
+        return view('user.pricing');
+    })->name('pricing');
 
-Route::get('/contact', function () {
-    return view('user.contact');
-})->name('user.contact');
+    // Contact route
+    Route::get('contact', function () {
+        return view('user.contact');
+    })->name('contact');
+});
 
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('dashboard', function () {
+        return view('admin.dashboard');
+    })->name('home');
+});

@@ -34,13 +34,13 @@
       <div id="carouselAbout" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="2000" class="h-100">
         <div class="carousel-inner h-100">
           <div class="carousel-item active h-100">
-            <img src="{{asset('images/background/bg-about.jpeg')}}" alt="about 1" class="d-block h-100 carousel-about img-fluid">
+            <img src="{{asset('user/images/background/bg-about.jpeg')}}" alt="about 1" class="d-block h-100 carousel-about img-fluid">
           </div>
           <div class="carousel-item h-100">
-            <img src="{{asset('images/background/bg-about.jpeg')}}" alt="about 2" class="d-block h-100 img-fluid">
+            <img src="{{asset('user/images/background/bg-about.jpeg')}}" alt="about 2" class="d-block h-100 img-fluid">
           </div>
           <div class="carousel-item h-100">
-            <img src="{{asset('images/background/bg-about.jpeg')}}" alt="about 3" class="d-block h-100 img-fluid">
+            <img src="{{asset('user/images/background/bg-about.jpeg')}}" alt="about 3" class="d-block h-100 img-fluid">
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@
   <p>Di 4People Studio, kami memiliki tim yang berkomitmen untuk memberikan layanan terbaik dalam mengabadikan momen-momen berharga Anda. Setiap individu dalam tim kami memiliki dedikasi tinggi untuk seni fotografi dan memastikan bahwa setiap detail tertangkap dengan sempurna dalam setiap foto.</p>
   <div class="row">
     <div class="col-3">
-      <img src="{{asset('images/teams/jean.jpg')}}" alt="team1">
+      <img src="{{asset('user/images/teams/jean.jpg')}}" alt="team1">
       <div class="description">
         <h4>Jenan Toinette</h4>
         <p>CEO</p>
@@ -65,7 +65,7 @@
     </div>
 
     <div class="col-3">
-      <img src="{{asset('images/teams/tobing.jpg')}}" alt="team2">
+      <img src="{{asset('user/images/teams/tobing.jpg')}}" alt="team2">
       <div class="description">
         <h4>Rendy Tobing</h4>
         <p>Manager</p>
@@ -74,7 +74,7 @@
     </div>
 
     <div class="col-3">
-      <img src="{{asset('images/teams/dtvni.jpg')}}" alt="team3">
+      <img src="{{asset('user/images/teams/dtvni.jpg')}}" alt="team3">
       <div class="description">
         <h4>dtvni</h4>
         <p>Photographer</p>
@@ -83,7 +83,7 @@
     </div>
 
     <div class="col-3">
-      <img src="{{asset('images/teams/wahyu.jpg')}}" alt="team4">
+      <img src="{{asset('user/images/teams/wahyu.jpg')}}" alt="team4">
       <div class="description">
         <h4>Wahyu</h4>
         <p>Assistant</p>
@@ -108,7 +108,7 @@
   <p>Terima kasih kepada pelanggan kami yang telah berbagi pengalaman mereka.</p>
   <article class="row">
     <div class="col-4">
-      <img src="{{asset('images/testimonial/rizki.jpg')}}" alt="client1">
+      <img src="{{asset('user/images/testimonial/rizki.jpg')}}" alt="client1">
       <div class="hgroup">
         <h3>Rizki & Mia</h3>
       </div>
@@ -117,7 +117,7 @@
     </div>
 
     <div class="col-4">
-      <img src="{{asset('images/testimonial/rich.jpg')}}" alt="client1">
+      <img src="{{asset('user/images/testimonial/rich.jpg')}}" alt="client1">
       <div class="hgroup">
         <h3>Rich Brian</h3>
       </div>
@@ -126,7 +126,7 @@
     </div>
 
     <div class="col-4">
-      <img src="{{asset('images/testimonial/rita.jpg')}}" alt="client1">
+      <img src="{{asset('user/images/testimonial/rita.jpg')}}" alt="client1">
       <div class="hgroup">
         <h3>Rita</h3>
       </div>
