@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminAuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,7 +37,14 @@ Route::prefix('/')->name('user.')->group(function () {
 });
 
 Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('dashboard', function () {
-        return view('admin.dashboard');
-    })->name('home');
+    Route::get('login', [AdminAuthController::class, 'index'])->name('login.view');
+    Route::post('login', [AdminAuthController::class, 'procesLogin'])->name('procesLogin');
+    Route::post('logout', [AdminAuthController::class, 'logout'])->name('logout');
+
+
+    Route::middleware(['checkRole:1,2'])->group(function () {
+        Route::get('dashboard', function () {
+            return view('admin.dashboard');
+        })->name('dashboard');
+    });
 });

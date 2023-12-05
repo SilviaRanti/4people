@@ -12,11 +12,14 @@
         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
           <img src="images/faces/face28.jpg" alt="profile" />
         </a>
-        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">\
-          <a class="dropdown-item">
-            <i class="ti-power-off text-primary"></i>
-            Logout
-          </a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+          <form action="{{ route('admin.logout') }}" method="POST">
+            @csrf
+            <button type="submit" class="dropdown-item">
+              <i class="ti-power-off text-primary"></i>
+              Logout
+            </button>
+          </form>
         </div>
       </li>
     </ul>
