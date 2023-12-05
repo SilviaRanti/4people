@@ -35,7 +35,7 @@ class AdminAuthController extends Controller
 
     // Login berhasil
     if (Auth::guard('admin')->attempt($credentials)) {
-      return redirect()->route('admin.dashbo'); // Mengarahkan ke halaman dashboard
+      return redirect()->route('admin.dashboard'); // Mengarahkan ke halaman dashboard
     }
 
     // Login gagal

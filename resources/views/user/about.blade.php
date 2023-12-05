@@ -30,7 +30,7 @@
       </div>
 
     </div>
-    <div class="col-6" >
+    <div class="col-6">
       <div id="carouselAbout" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="2000" class="h-100">
         <div class="carousel-inner h-100">
           <div class="carousel-item active h-100">
@@ -56,28 +56,28 @@
   <p>Di 4People Studio, kami memiliki tim yang berkomitmen untuk memberikan layanan terbaik dalam mengabadikan momen-momen berharga Anda. Setiap individu dalam tim kami memiliki dedikasi tinggi untuk seni fotografi dan memastikan bahwa setiap detail tertangkap dengan sempurna dalam setiap foto.</p>
   <div class="row">
     <div class="col-3">
+      <img src="{{asset('user/images/teams/tobing.jpg')}}" alt="team2">
+      <div class="description">
+        <h4>Rendy L.Tobing</h4>
+        <p>CEO</p>
+        <a href="https://www.instagram.com/rendytobing/" style="text-decoration: none;">Instagram <i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="col-3">
       <img src="{{asset('user/images/teams/jean.jpg')}}" alt="team1">
       <div class="description">
-        <h4>Jenan Toinette</h4>
+        <h4>Jennifer Antoinette</h4>
         <p>CEO</p>
         <a href="https://www.instagram.com/jenantoinette/" style="text-decoration: none;">Instagram <i class="fab fa-instagram"></i></a>
       </div>
     </div>
 
     <div class="col-3">
-      <img src="{{asset('user/images/teams/tobing.jpg')}}" alt="team2">
-      <div class="description">
-        <h4>Rendy Tobing</h4>
-        <p>Manager</p>
-        <a href="https://www.instagram.com/rendytobing/" style="text-decoration: none;">Instagram <i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-
-    <div class="col-3">
       <img src="{{asset('user/images/teams/dtvni.jpg')}}" alt="team3">
       <div class="description">
-        <h4>dtvni</h4>
-        <p>Photographer</p>
+        <h4>dita</h4>
+        <p>Staff</p>
         <a href="https://www.instagram.com/dtvni_/" style="text-decoration: none;">Instagram <i class="fab fa-instagram"></i></a>
       </div>
     </div>
@@ -86,7 +86,7 @@
       <img src="{{asset('user/images/teams/wahyu.jpg')}}" alt="team4">
       <div class="description">
         <h4>Wahyu</h4>
-        <p>Assistant</p>
+        <p>Photograper</p>
         <a href="https://www.instagram.com/wahyutomypriyanto/" style="text-decoration: none;">Instagram <i class="fab fa-instagram"></i></a>
       </div>
     </div>

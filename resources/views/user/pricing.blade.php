@@ -43,7 +43,7 @@
           <li>No makeup</li>
           <li>No stylist assistance</li>
         </ul>
-        <button>Bookin Now</button>
+        <button>Booking Now</button>
       </div>
     </div>
 
@@ -57,7 +57,7 @@
           <li>No makeup</li>
           <li>No stylist assistance</li>
         </ul>
-        <button>Bookin Now</button>
+        <button>Booking Now</button>
       </div>
     </div>
   </article>
@@ -76,7 +76,7 @@
           <li>No makeup</li>
           <li>No stylist assistance</li>
         </ul>
-        <button>Bookin Now</button>
+        <button>Booking Now</button>
       </div>
     </div>
 
@@ -90,7 +90,7 @@
           <li>No makeup</li>
           <li>No stylist assistance</li>
         </ul>
-        <button>Bookin Now</button>
+        <button>Booking Now</button>
       </div>
     </div>
   </article>
@@ -109,7 +109,7 @@
           <li>No makeup</li>
           <li>No stylist assistance</li>
         </ul>
-        <button>Bookin Now</button>
+        <button>Booking Now</button>
       </div>
     </div>
 
@@ -123,7 +123,7 @@
           <li>No makeup</li>
           <li>No stylist assistance</li>
         </ul>
-        <button>Bookin Now</button>
+        <button>Booking Now</button>
       </div>
     </div>
     <div class="col-3">
@@ -136,7 +136,7 @@
           <li>No makeup</li>
           <li>No stylist assistance</li>
         </ul>
-        <button>Bookin Now</button>
+        <button>Booking Now</button>
       </div>
     </div>
     <div class="col-3">
@@ -149,7 +149,7 @@
           <li>No makeup</li>
           <li>No stylist assistance</li>
         </ul>
-        <button>Bookin Now</button>
+        <button>Booking Now</button>
       </div>
     </div>
   </article>

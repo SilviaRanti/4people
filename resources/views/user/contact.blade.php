@@ -55,31 +55,31 @@
         <div class="accordion-item">
           <h2 class="accordion-header" id="flush-headingOne">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-              Accordion Item #1
+              Apakah hanya foto studio atau bisa outdoor ?
             </button>
           </h2>
           <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+            <div class="accordion-body">4people Studio menawarkan fleksibilitas dalam pemilihan lokasi baik itu studio photo indoor ataupun outdoor. Kami menyediakan sesi foto di studio dengan set terbaru dan tren, serta sesi foto di luar ruangan untuk prewedding, acara pernikahan, dan berbagai acara lainnya.</div>
           </div>
         </div>
         <div class="accordion-item">
           <h2 class="accordion-header" id="flush-headingTwo">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-              Accordion Item #2
+              Apakah disediakan sewa bridal dan kelengkapan lainya ?
             </button>
           </h2>
           <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+            <div class="accordion-body">Kami bangga menjadi one-stop solution untuk kebutuhan foto Anda. 4people Studio menyediakan layanan sewa bridal, jas, dan berbagai perlengkapan pakaian lainnya. Tim customer service kami siap membantu Anda memilih dan berkonsultasi di studio kami.</div>
           </div>
         </div>
         <div class="accordion-item">
           <h2 class="accordion-header" id="flush-headingThree">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-              Accordion Item #3
+              Fasilitas lainya apa saja ?
             </button>
           </h2>
           <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+            <div class="accordion-body">4people Studio dilengkapi dengan beragam pilihan set studio, ruang tunggu yang nyaman, customer service yang ramah, ruang make up yang lengkap, serta parkir luas dan aman. Lokasi studio kami juga sangat mudah dijangkau untuk kenyamanan Anda.</div>
           </div>
         </div>
       </div>
