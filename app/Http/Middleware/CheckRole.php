@@ -10,8 +10,11 @@ class CheckRole
   public function handle($request, Closure $next, ...$roles)
   {
     $user = Auth::guard('admin')->user();
-    
+
     if (!$user) {
+      toastr()
+        ->newestOnTop(true)
+        ->addError('Silahkan login terlebih dahulu!');
       return redirect()->route('admin.login.view'); // Redirect ke halaman login jika tidak terautentikasi
     }
 
@@ -21,6 +24,9 @@ class CheckRole
     }
 
     // Redirect ke halaman yang sesuai jika peran tidak diizinkan
+    toastr()
+      ->newestOnTop(true)
+      ->addWarning('Role tidak diizinkan!');
     return redirect()->back();
   }
 }

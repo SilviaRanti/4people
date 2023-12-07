@@ -28,6 +28,12 @@ class AdminAuthController extends Controller
     ]);
 
     if ($validator->fails()) {
+      $errors = $validator->errors()->all();
+      foreach ($errors as $error) {
+        toastr()
+          ->newestOnTop(true)
+          ->addError($error);
+      }
       return redirect()->back()->withErrors($validator)->withInput();
     }
 
@@ -35,10 +41,16 @@ class AdminAuthController extends Controller
 
     // Login berhasil
     if (Auth::guard('admin')->attempt($credentials)) {
+      toastr()
+        ->newestOnTop(true)
+        ->addSuccess('Selamat datang...');
       return redirect()->route('admin.dashboard'); // Mengarahkan ke halaman dashboard
     }
 
     // Login gagal
+    toastr()
+      ->newestOnTop(true)
+      ->addError('Username atau password salah!');
     return redirect()->back()->withErrors([
       'error' => 'username atau password salah',
     ])->withInput();
@@ -47,6 +59,9 @@ class AdminAuthController extends Controller
   public function logout()
   {
     Auth::guard('admin')->logout(); // Logout pengguna dari guard 'admin'
+    toastr()
+      ->newestOnTop(true)
+      ->addSuccess('Berhasil logout...');
     return redirect()->route('admin.login.view'); // Mengarahkan ke halaman login
   }
 }

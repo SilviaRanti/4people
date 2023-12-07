@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Admin\AdminHeroController;
+use App\Http\Controllers\User\UserHomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 // user route
 Route::prefix('/')->name('user.')->group(function () {
-    Route::get('/', function () {
-        return view('user.home');
-    })->name('home');
+    Route::get('/', [UserHomeController::class, 'index'])->name('home');
 
     // About route
     Route::get('about', function () {
@@ -46,5 +46,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('dashboard', function () {
             return view('admin.dashboard');
         })->name('dashboard');
+
+        Route::resource('hero', AdminHeroController::class);
     });
 });

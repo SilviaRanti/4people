@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>4People Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="{{asset('/favicon.ico')}}" />
 
   <link rel="stylesheet" href="{{asset('admin/vendors/feather/feather.css')}}">
   <link rel="stylesheet" href="{{asset('admin/vendors/ti-icons/css/themify-icons.css')}}">
@@ -12,13 +13,13 @@
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="{{asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}">
-  <link rel="stylesheet" href="{{asset('admin/vendors/ti-icons/css/themify-icons.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('admin/js/select.dataTables.min.css')}}">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="{{asset('admin/css/vertical-layout-light/style.css')}}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="{{asset('admin/images/favicon.png')}}" />
+  <!-- lightbox -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
   @stack('css')
 </head>
 
@@ -30,7 +31,6 @@
       @include('admin.partials.sidebar')
       <div class="main-panel">
         @yield('content')
-        @include('admin.partials.footer')
       </div>
     </div>
   </div>
@@ -54,7 +54,14 @@
   <!-- Custom js for this page-->
   <script src="{{asset('admin/js/dashboard.js')}}"></script>
   <script src="{{asset('admin/js/Chart.roundedBarCharts.js')}}"></script>
+  <script src="{{asset('admin/js/typeahead.js')}}"></script>
+  <script src="{{asset('admin/js/file-upload.js')}}"></script>
+  <script src="{{asset('admin/js/select2.js')}}"></script>
   <!-- End custom js for this page-->
+  <!-- sweet alert -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+  <!-- light box -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   @stack('script')
 
 </body>

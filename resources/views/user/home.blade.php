@@ -1,78 +1,34 @@
 @extends('user.layouts.main')
 @section('content')
 <!-- start hero -->
-<!-- <div class="hero-slider">
-    <div id="carouselExampleCaptions" class="carousel slide">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active" style="height: 800px;">
-          <img src="{{asset('user/images/background/bg-header.jpg')}}" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
-            <button>Contact us</button>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="{{asset('user/images/background/bg-header2.jpeg')}}" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-</div> -->
-
 <header>
   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
     <div class="carousel-inner">
-      <div class="carousel-item active carousel-wrapper">
-        <img src="{{asset('user/images/background/bg-header.jpg')}}" class="d-block w-100 h-100" alt="...">
+      @foreach ($heros as $hero)
+      <div class="carousel-item {{ $loop->first ? 'active' : '' }} carousel-wrapper">
+        <img src="{{ asset('user/images/background/' . $hero->gambar) }}" class="d-block w-100 h-100" alt="{{ $hero->nama }}">
         <div class="carousel-caption">
-          <h1>Capturing Timeless Moments</h1>
-          <p>Cherish the joy, love, and laughter of friends moments that last a lifetime.</p>
+          <h1>{{ $hero->judul }}</h1>
+          <p>{{ $hero->deskripsi }}</p>
         </div>
       </div>
+      @endforeach
+
+      <!-- Duplicate set of items for infinite loop -->
+      @foreach ($heros as $hero)
       <div class="carousel-item carousel-wrapper">
-        <img src="{{asset('user/images/background/bg-header2.jpg')}}" class="d-block w-100 h-100" alt="...">
+        <img src="{{ asset('user/images/background/' . $hero->gambar) }}" class="d-block w-100 h-100" alt="{{ $hero->nama }}">
         <div class="carousel-caption">
-          <h1>Family Bonds, Forever Strong</h1>
-          <p>Discover the beauty of togetherness and the strength found in family connections.</p>
+          <h1>{{ $hero->judul }}</h1>
+          <p>{{ $hero->deskripsi }}</p>
         </div>
       </div>
-      <div class="carousel-item carousel-wrapper">
-        <img src="{{asset('user/images/background/bg-header3.jpeg')}}" class="d-block w-100 h-100" alt="...">
-        <div class="carousel-caption">
-          <h1>Celebrating Family Love</h1>
-          <p>Capture the warmth and joy that family brings into every frame, creating lasting memories.</p>
-        </div>
-      </div>
+      @endforeach
     </div>
   </div>
 </header>
-
-
 <!-- end hero -->
+
 
 <!-- Services -->
 <section class="services">

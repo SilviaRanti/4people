@@ -1,9 +1,15 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
   <ul class="nav">
     <li class="nav-item">
-      <a class="nav-link" href="index.html">
+      <a class="nav-link" href="{{ route('admin.dashboard') }}">
         <i class="icon-grid menu-icon"></i>
         <span class="menu-title">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{route('admin.hero.index')}}">
+        <i class="menu-icon ti-layout-list-large-image"></i>
+        <span class="menu-title">Data Hero</span>
       </a>
     </li>
     <li class="nav-item">
@@ -98,6 +104,15 @@
       <a class="nav-link" href="pages/documentation/documentation.html">
         <i class="icon-paper menu-icon"></i>
         <span class="menu-title">Documentation</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+        @csrf
+      </form>
+      <a class="nav-link" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+        <i class="ti-power-off menu-icon"></i>
+        <span class="menu-title">Logout</span>
       </a>
     </li>
   </ul>
