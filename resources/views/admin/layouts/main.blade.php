@@ -20,6 +20,10 @@
   <!-- endinject -->
   <!-- lightbox -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+  <!-- fa icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="{{asset('admin/vendors/select2/select2.min.css')}}">
+  <link rel="stylesheet" href="{{asset('admin/vendors/select2-bootstrap-theme/select2-bootstrap.min.css')}}">
   @stack('css')
 </head>
 
@@ -42,6 +46,7 @@
   <script src="{{asset('admin/vendors/datatables.net/jquery.dataTables.js')}}"></script>
   <script src="{{asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.js')}}"></script>
   <script src="{{asset('admin/js/dataTables.select.min.js')}}"></script>
+  <script src="{{asset('admin/vendors/select2/select2.min.js')}}"></script>
 
   <!-- End plugin js for this page -->
   <!-- inject:js -->
@@ -56,14 +61,35 @@
   <script src="{{asset('admin/js/Chart.roundedBarCharts.js')}}"></script>
   <script src="{{asset('admin/js/typeahead.js')}}"></script>
   <script src="{{asset('admin/js/file-upload.js')}}"></script>
-  <script src="{{asset('admin/js/select2.js')}}"></script>
   <!-- End custom js for this page-->
   <!-- sweet alert -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
   <!-- light box -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   @stack('script')
+  <style>
+    .select2-selection--single {
+      width: 100% !important;
+      height: 2.875rem !important;
+    }
 
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+      line-height: 20px !important;
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__arrow b {
+      top: 80% !important;
+    }
+
+
+   .select2-hidden-accessible {
+      position: inherit !important;
+    }
+
+    .select2-container {
+      width: 100% !important;
+    }
+  </style>
 </body>
 
 </html>

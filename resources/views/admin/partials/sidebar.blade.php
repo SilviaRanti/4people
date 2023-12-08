@@ -13,9 +13,15 @@
       </a>
     </li>
     <li class="nav-item">
+      <a class="nav-link" href="{{route('admin.user.index')}}">
+        <i class="icon-head menu-icon"></i>
+        <span class="menu-title">Admin & Karyawan</span>
+      </a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-        <i class="icon-layout menu-icon"></i>
-        <span class="menu-title">UI Elements</span>
+        <i class="icon-head menu-icon"></i>
+        <span class="menu-title">Data Admin</span>
         <i class="menu-arrow"></i>
       </a>
       <div class="collapse" id="ui-basic">
@@ -77,7 +83,7 @@
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
         <i class="icon-head menu-icon"></i>
-        <span class="menu-title">User Pages</span>
+        <span class="menu-title">Data Admin</span>
         <i class="menu-arrow"></i>
       </a>
       <div class="collapse" id="auth">
@@ -104,6 +110,12 @@
       <a class="nav-link" href="pages/documentation/documentation.html">
         <i class="icon-paper menu-icon"></i>
         <span class="menu-title">Documentation</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="pages/documentation/documentation.html">
+        <i class="ti-settings menu-icon"></i>
+        <span class="menu-title">Settings</span>
       </a>
     </li>
     <li class="nav-item">
