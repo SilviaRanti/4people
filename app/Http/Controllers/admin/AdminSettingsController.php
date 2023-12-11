@@ -6,11 +6,13 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use Illuminate\Http\Request; // Import the correct Request class
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
-class AdminUserController extends Controller
+class AdminSettingsController extends Controller
 {
   /**
    * Display a listing of the resource.
@@ -19,11 +21,7 @@ class AdminUserController extends Controller
    */
   public function index()
   {
-
-    $data = [
-      'users' => Admin::all()
-    ];
-    return view('admin.user.index', $data);
+    return view('admin.settings.index');
   }
 
   /**
@@ -44,16 +42,21 @@ class AdminUserController extends Controller
    */
   public function store(Request $request)
   {
+    // Mendapatkan data admin yang sedang login
+    $admin = Auth::guard('admin')->user();
+
     $validator = Validator::make($request->all(), [
       'nama' => 'required|string|max:255',
       'username' => [
         'required',
         'string',
         'max:255',
-        Rule::unique('admins')->ignore($request->user_id),
+        Rule::unique('admins')->ignore($admin->id),
       ],
       'password' => 'required|string|min:6',
-      'role' => 'required|in:1,2',
+      'password_baru' => 'nullable|string|min:6',
+    ], [
+      'password.required' => 'Password tidak boleh kosong!.'
     ]);
 
     if ($validator->fails()) {
@@ -64,18 +67,27 @@ class AdminUserController extends Controller
       return redirect()->back()->withErrors($validator)->withInput();
     }
 
-    try {
-      Admin::create([
-        'nama' => $request->input('nama'),
-        'username' => $request->input('username'),
-        'password' => Hash::make($request->input('password')),
-        'role' => $request->input('role'),
-      ]);
 
-      toastr()->newestOnTop(true)->addSuccess('Berhasil tambah data');
+    try {
+      if (Hash::check($request->input('password'), $admin->password)) {
+        // Jika password lama cocok, lakukan pembaruan data
+        $admin->nama = $request->input('nama');
+        $admin->username = $request->input('username');
+
+        // Pembaruan password baru, jika disediakan
+        if ($request->filled('password_baru')) {
+          $admin->password = Hash::make($request->input('password_baru'));
+        }
+
+        $admin->save();
+
+        toastr()->newestOnTop(true)->addSuccess('Berhasil update data');
+      } else {
+        toastr()->newestOnTop(true)->addError('Password salah.');
+      }
       return redirect()->back();
     } catch (\Throwable $th) {
-      toastr()->newestOnTop(true)->addError('Gagal tambah data!');
+      toastr()->newestOnTop(true)->addError('Gagal update data: ' . $th->getMessage());
       return redirect()->back();
     }
   }

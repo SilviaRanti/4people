@@ -43,7 +43,8 @@ class AdminAuthController extends Controller
     if (Auth::guard('admin')->attempt($credentials)) {
       toastr()
         ->newestOnTop(true)
-        ->addSuccess('Selamat datang, ' . Auth::guard('admin')->user()->nama . '!'); // Mengarahkan ke halaman dashboard
+        ->addSuccess('Selamat datang, ' . Auth::guard('admin')->user()->nama . '!');
+      return redirect()->route('admin.dashboard');
     }
 
     // Login gagal

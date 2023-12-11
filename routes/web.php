@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminHeroController;
+use App\Http\Controllers\Admin\AdminSettingsController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\User\UserHomeController;
 use Illuminate\Support\Facades\Route;
@@ -50,5 +51,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         Route::resource('user', AdminUserController::class);
         Route::resource('hero', AdminHeroController::class);
+        Route::resource('settings', AdminSettingsController::class);
     });
 });
