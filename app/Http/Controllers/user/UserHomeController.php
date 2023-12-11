@@ -20,7 +20,7 @@ class UserHomeController extends Controller
 
     $data = [
       'heros' => Hero::all(),
-      'latestWorks' => LatestWork::orderBy('urutan', 'asc')->get()
+      'latestWorks' => LatestWork::all()
     ];
     return view('user.home', $data);
   }
