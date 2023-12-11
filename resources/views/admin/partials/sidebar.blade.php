@@ -6,6 +6,14 @@
         <span class="menu-title">Dashboard</span>
       </a>
     </li>
+    @if(Auth::guard('admin')->user()->role != 2)
+    <li class="nav-item">
+      <a class="nav-link" href="{{route('admin.user.index')}}">
+        <i class="icon-head menu-icon"></i>
+        <span class="menu-title">Admin & Karyawan</span>
+      </a>
+    </li>
+    @endif
     <li class="nav-item">
       <a class="nav-link" href="{{route('admin.hero.index')}}">
         <i class="menu-icon ti-layout-list-large-image"></i>
@@ -13,9 +21,9 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{route('admin.user.index')}}">
-        <i class="icon-head menu-icon"></i>
-        <span class="menu-title">Admin & Karyawan</span>
+      <a class="nav-link" href="{{route('admin.latest-works.index')}}">
+        <i class="menu-icon ti-image"></i>
+        <span class="menu-title">Latest Work</span>
       </a>
     </li>
     <li class="nav-item">

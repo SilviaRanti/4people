@@ -73,22 +73,22 @@
     <div class="col-7">
       <div class="row">
         <div class="col-4">
-          <div class="works1"></div>
-          <div class="works2"></div>
+          <div class="works1" style="background-image: url('{{ asset('user/images/last-wrok/'.$latestWorks[0]->gambar) }}')"></div>
+          <div class="works2" style="background-image: url('{{ asset('user/images/last-wrok/'.$latestWorks[1]->gambar) }}')"></div>
         </div>
         <div class="col-8">
-          <div class="works3"></div>
+          <div class="works3" style="background-image: url('{{ asset('user/images/last-wrok/'.$latestWorks[2]->gambar) }}')"></div>
         </div>
       </div>
     </div>
 
     <div class="col-5">
       <div class="row">
-        <div class="col-12 works4"></div>
+        <div class="col-12 works4" style="background-image: url('{{ asset('user/images/last-wrok/'.$latestWorks[3]->gambar) }}')"></div>
       </div>
       <div class="row">
-        <div class="col-6 works5"></div>
-        <div class="col-6 works6"></div>
+        <div class="col-6 works5" style="background-image: url('{{ asset('user/images/last-wrok/'.$latestWorks[4]->gambar) }}')"></div>
+        <div class="col-6 works6" style="background-image: url('{{ asset('user/images/last-wrok/'.$latestWorks[5]->gambar) }}')"></div>
       </div>
     </div>
   </div>

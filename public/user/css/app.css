@@ -390,7 +390,6 @@ Works
 }
 
 .works1 {
-    background-image: url(../images/last-wrok/works1.jpeg);
     height: 50vh;
     background-size: cover;
 }
@@ -401,7 +400,6 @@ Works
 }
 
 .works2 {
-    background-image: url(../images/last-wrok/works2.jpeg);
     height: 50vh;
     background-size: cover;
 }
@@ -412,7 +410,6 @@ Works
 }
 
 .works3 {
-    background-image: url(../images/last-wrok/works3.jpeg);
     height: 100vh;
     background-size: cover;
 }
@@ -423,7 +420,6 @@ Works
 }
 
 .works4 {
-    background-image: url(../images/last-wrok/works4.jpeg);
     height: 50vh;
     background-size: cover;
 }
@@ -434,7 +430,6 @@ Works
 }
 
 .works5 {
-    background-image: url(../images/last-wrok/works5.jpeg);
     height: 50vh;
     background-size: cover;
     background-position: center;
@@ -446,7 +441,6 @@ Works
 }
 
 .works6 {
-    background-image: url(../images/last-wrok/works6.jpeg);
     height: 50vh;
     background-size: cover;
 }
@@ -511,10 +505,6 @@ Team
 
 .team h2 + p {
     padding-bottom: 40px;
-}
-
-.team .col-3 {
-    padding: 30px;
 }
 
 .team .description {

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 
 use App\Models\Hero;
 use App\Http\Controllers\Controller;
+use App\Models\LatestWork;
 use Illuminate\Http\Request;
 
 class UserHomeController extends Controller
@@ -18,7 +19,8 @@ class UserHomeController extends Controller
   {
 
     $data = [
-      'heros' => Hero::all()
+      'heros' => Hero::all(),
+      'latestWorks' => LatestWork::orderBy('urutan', 'asc')->get()
     ];
     return view('user.home', $data);
   }

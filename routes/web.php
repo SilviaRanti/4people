@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminHeroController;
+use App\Http\Controllers\Admin\AdminLatestWorkController;
 use App\Http\Controllers\Admin\AdminSettingsController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\User\UserHomeController;
@@ -44,13 +45,17 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('logout', [AdminAuthController::class, 'logout'])->name('logout');
 
 
+    Route::middleware(['checkRole:1'])->group(function () {
+        Route::resource('user', AdminUserController::class);
+    });
+
     Route::middleware(['checkRole:1,2'])->group(function () {
         Route::get('dashboard', function () {
             return view('admin.dashboard');
         })->name('dashboard');
 
-        Route::resource('user', AdminUserController::class);
         Route::resource('hero', AdminHeroController::class);
+        Route::resource('latest-works', AdminLatestWorkController::class);
         Route::resource('settings', AdminSettingsController::class);
     });
 });
