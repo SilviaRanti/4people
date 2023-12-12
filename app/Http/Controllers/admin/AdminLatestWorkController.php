@@ -7,7 +7,7 @@ use App\Models\Hero;
 use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use App\Models\LatestWork;
-use Illuminate\Http\Request; // Import the correct Request class
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 

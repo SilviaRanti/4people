@@ -1,11 +1,14 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminHeroController;
 use App\Http\Controllers\Admin\AdminLatestWorkController;
+use App\Http\Controllers\Admin\AdminServiceController;
 use App\Http\Controllers\Admin\AdminSettingsController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\User\UserHomeController;
+use App\Http\Controllers\User\UserPricingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,9 +32,7 @@ Route::prefix('/')->name('user.')->group(function () {
     })->name('about');
 
     // Pricing route
-    Route::get('pricing', function () {
-        return view('user.pricing');
-    })->name('pricing');
+    Route::get('pricing', [UserPricingController::class, 'index'])->name('pricing');
 
     // Contact route
     Route::get('contact', function () {
@@ -56,6 +57,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         Route::resource('hero', AdminHeroController::class);
         Route::resource('latest-works', AdminLatestWorkController::class);
+        Route::resource('packages', AdminServiceController::class);
+        Route::resource('categories', AdminCategoryController::class);
         Route::resource('settings', AdminSettingsController::class);
     });
 });

@@ -88,7 +88,7 @@
       event.preventDefault();
       swal({
           title: `Delete Data ?`,
-          text: "data yang di hapus tidak dapat dipulihkan!",
+          text: "data yang di hapus tidak dapat dipulihkan beserta data lainnya yang terkait!",
           icon: "warning",
           buttons: true,
           dangerMode: true,

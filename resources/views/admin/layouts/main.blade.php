@@ -24,6 +24,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="{{asset('admin/vendors/select2/select2.min.css')}}">
   <link rel="stylesheet" href="{{asset('admin/vendors/select2-bootstrap-theme/select2-bootstrap.min.css')}}">
+  <!-- summernote -->
+  <link rel="stylesheet" href="{{ asset('plugins') }}/summernote/summernote-bs4.min.css">
   @stack('css')
 </head>
 
@@ -66,6 +68,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
   <!-- light box -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  <!-- Summernote -->
+  <script src="{{ asset('plugins') }}/summernote/summernote-bs4.min.js"></script>
   @stack('script')
   <style>
     .select2-selection--single {
@@ -82,7 +86,7 @@
     }
 
 
-   .select2-hidden-accessible {
+    .select2-hidden-accessible {
       position: inherit !important;
     }
 

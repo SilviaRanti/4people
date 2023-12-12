@@ -27,7 +27,7 @@
     </div>
   </div>
 </header>
-<!-- Pricing -->
+{{-- <!-- Pricing -->
 <section class="pricing container">
   <!-- Newborn and Kiddy -->
   <article class="row d-flex justify-content-center align-item-center">
@@ -154,5 +154,32 @@
     </div>
   </article>
 </section>
-<!-- End of Pricing -->
+<!-- End of Pricing --> --}}
+
+<!-- Pricing Section -->
+<section class="pricing container">
+
+  @foreach ($categories as $category)
+  <!-- Category Section -->
+  <article class="row d-flex justify-content-center align-item-center">
+    <h3>{{ $category->nama }}</h3>
+    <p>{{ $category->deskripsi }}</p>
+
+    @foreach ($category->packages as $service)
+    <!-- Service -->
+    <div class="col-4">
+      <div class="wrapper">
+        <h3>{{ $service->nama }}</h3>
+        <h4>{{ Str::rupiah($service->harga) }}</h4>
+        {!! $service->deskripsi !!}
+        <button>Booking Now</button>
+      </div>
+    </div>
+    @endforeach
+
+  </article>
+  @endforeach
+
+</section>
+<!-- End of Pricing Section -->
 @endsection

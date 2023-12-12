@@ -141,13 +141,16 @@
 @push('script')
 <script>
   $(document).ready(function() {
+    $('.table').DataTable({
+      responsive: true
+    });
     $('.show_confirm').click(function(event) {
       var form = $(this).closest("form");
       var name = $(this).data("name");
       event.preventDefault();
       swal({
           title: `Delete Data ?`,
-          text: "data yang di hapus tidak dapat dipulihkan!",
+          text: "data yang di hapus tidak dapat dipulihkan beserta data lainnya yang terkait!",
           icon: "warning",
           buttons: true,
           dangerMode: true,

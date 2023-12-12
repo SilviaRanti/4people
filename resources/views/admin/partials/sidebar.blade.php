@@ -27,6 +27,19 @@
       </a>
     </li>
     <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#services" aria-expanded="false" aria-controls="ui-basic">
+        <i class="menu-icon ti-package"></i>
+        <span class="menu-title">Services</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="services">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{{route('admin.packages.index')}}">Packages</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('admin.categories.index')}}">Categories</a></li>
+        </ul>
+      </div>
+    </li>
+    {{-- <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
         <i class="icon-head menu-icon"></i>
         <span class="menu-title">Data Admin</span>
@@ -39,7 +52,7 @@
           <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
         </ul>
       </div>
-    </li>
+    </li> --}}
     <li class="nav-item">
       <a class="nav-link" href="{{route('admin.settings.index')}}">
         <i class="ti-settings menu-icon"></i>
