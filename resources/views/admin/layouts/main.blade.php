@@ -26,6 +26,8 @@
   <link rel="stylesheet" href="{{asset('admin/vendors/select2-bootstrap-theme/select2-bootstrap.min.css')}}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('plugins') }}/summernote/summernote-bs4.min.css">
+  <!-- Tempusdominus Bootstrap 4 CSS -->
+  <link rel="stylesheet" href="{{asset('admin/vendors/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.min.css')}}" />
   @stack('css')
 </head>
 
@@ -70,6 +72,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   <!-- Summernote -->
   <script src="{{ asset('plugins') }}/summernote/summernote-bs4.min.js"></script>
+  <!-- Moment.js -->
+  <script src="{{asset('admin/vendors/moment/moment.js')}}"></script>
+  <!-- Tempusdominus Bootstrap 4 JS -->
+  <script src="{{asset('admin/vendors/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.js')}}"></script>
+  <!-- full calendar -->
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+
   @stack('script')
   <style>
     .select2-selection--single {

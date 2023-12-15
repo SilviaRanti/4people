@@ -1,12 +1,16 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Admin\AdminBookingController;
 use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminHeroController;
 use App\Http\Controllers\Admin\AdminLatestWorkController;
+use App\Http\Controllers\Admin\AdminPembayaranController;
 use App\Http\Controllers\Admin\AdminServiceController;
 use App\Http\Controllers\Admin\AdminSettingsController;
 use App\Http\Controllers\Admin\AdminUserController;
+use App\Http\Controllers\User\UserBookingController;
 use App\Http\Controllers\User\UserHomeController;
 use App\Http\Controllers\User\UserPricingController;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +38,9 @@ Route::prefix('/')->name('user.')->group(function () {
     // Pricing route
     Route::get('pricing', [UserPricingController::class, 'index'])->name('pricing');
 
+    // Booking route
+    Route::post('/booking', [UserBookingController::class, 'store'])->name('booking');
+
     // Contact route
     Route::get('contact', function () {
         return view('user.contact');
@@ -51,14 +58,17 @@ Route::prefix('admin')->name('admin.')->group(function () {
     });
 
     Route::middleware(['checkRole:1,2'])->group(function () {
-        Route::get('dashboard', function () {
-            return view('admin.dashboard');
-        })->name('dashboard');
+        Route::resource('dashboard', AdminDashboardController::class);
+
+        Route::get('/getBookings', [AdminBookingController::class, 'getBookings']);
+
 
         Route::resource('hero', AdminHeroController::class);
         Route::resource('latest-works', AdminLatestWorkController::class);
         Route::resource('packages', AdminServiceController::class);
         Route::resource('categories', AdminCategoryController::class);
         Route::resource('settings', AdminSettingsController::class);
+        Route::resource('bookings', AdminBookingController::class);
+        Route::resource('pembayaran', AdminPembayaranController::class);
     });
 });

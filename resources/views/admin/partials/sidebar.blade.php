@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
   <ul class="nav">
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('admin.dashboard') }}">
+      <a class="nav-link" href="{{ route('admin.dashboard.index') }}">
         <i class="icon-grid menu-icon"></i>
         <span class="menu-title">Dashboard</span>
       </a>
@@ -53,6 +53,18 @@
         </ul>
       </div>
     </li> --}}
+    <li class="nav-item">
+      <a class="nav-link" href="{{route('admin.bookings.index')}}">
+        <i class="ti-bookmark menu-icon"></i>
+        <span class="menu-title">Data Booking</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{route('admin.pembayaran.index')}}">
+        <i class="ti-money menu-icon"></i>
+        <span class="menu-title">Data Pembayaran</span>
+      </a>
+    </li>
     <li class="nav-item">
       <a class="nav-link" href="{{route('admin.settings.index')}}">
         <i class="ti-settings menu-icon"></i>

@@ -124,7 +124,7 @@
           <div class="form-group">
             <label for="password">Password</label>
             <div class="input-group">
-              <input name="password" type="password" class="form-control form-control-lg password" id="password" placeholder="Password">
+              <input name="password" type="password" class="form-control form-control-lg password" id="password" placeholder="Kosongkan jikda tidak diubah">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary togglePassword" type="button" id="togglePassword">
                   <i class="fas fa-eye"></i>

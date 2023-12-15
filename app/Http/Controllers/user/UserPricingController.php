@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Hero;
 use Illuminate\Http\Request;
 
 class UserPricingController extends Controller
@@ -17,7 +18,12 @@ class UserPricingController extends Controller
   public function index()
   {
     $categories = Category::with('packages')->get();
-    return view('user.pricing', ['categories' => $categories]);
+    $data = [
+      'heros' => Hero::all(),
+      'categories' => $categories
+    ];
+
+    return view('user.pricing', $data);
   }
 
   /**

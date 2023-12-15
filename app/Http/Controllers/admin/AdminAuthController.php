@@ -12,7 +12,7 @@ class AdminAuthController extends Controller
   public function index()
   {
     if (Auth::guard('admin')->check()) {
-      return redirect()->route('admin.dashboard');
+      return redirect()->route('admin.dashboard.index');
     }
     return view('admin.login');
   }
@@ -44,7 +44,7 @@ class AdminAuthController extends Controller
       toastr()
         ->newestOnTop(true)
         ->addSuccess('Selamat datang, ' . Auth::guard('admin')->user()->nama . '!');
-      return redirect()->route('admin.dashboard');
+      return redirect()->route('admin.dashboard.index');
     }
 
     // Login gagal
