@@ -17,7 +17,7 @@
     <li class="nav-item">
       <a class="nav-link" href="{{route('admin.hero.index')}}">
         <i class="menu-icon ti-layout-list-large-image"></i>
-        <span class="menu-title">Data Hero</span>
+        <span class="menu-title">Highlight</span>
       </a>
     </li>
     <li class="nav-item">

@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav>
+<nav style="position: sticky; top: 0; left: 0; right: 0; z-index: 99; background-color: white">
   <a href="{{ route('user.home') }}" class="logo text-dark">
     <img src="{{ asset('user/images/logo/logo.jpg') }}" class="logo-header" alt="4People Studio Logo">
     4People Studio

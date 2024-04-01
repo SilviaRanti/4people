@@ -157,7 +157,7 @@
       events: {
         url: '/admin/getBookings',
         success: function(content) {
-          console.log("Events: ", content); // This should log your events to the console
+          console.log("Events: ", content);
         },
         failure: function() {
           console.log("Error fetching events");

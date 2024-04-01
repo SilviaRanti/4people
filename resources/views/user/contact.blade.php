@@ -65,11 +65,11 @@
         <div class="accordion-item">
           <h2 class="accordion-header" id="flush-headingTwo">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-              Apakah disediakan sewa bridal dan kelengkapan lainya ?
+              Apakah disediakan properti dan kelengkapan lainnya ?
             </button>
           </h2>
           <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Kami bangga menjadi one-stop solution untuk kebutuhan foto Anda. 4people Studio menyediakan layanan sewa bridal, jas, dan berbagai perlengkapan pakaian lainnya. Tim customer service kami siap membantu Anda memilih dan berkonsultasi di studio kami.</div>
+            <div class="accordion-body">Kami menyediakan beragam properti lucu dan lembut untuk sesi foto newborn dan kiddy yang penuh keceriaan. Dari selimut yang lembut hingga aksesoris imut, setiap elemen kami dirancang untuk membuat momen foto mereka begitu istimewa. Tapi jangan khawatir, Anda juga bisa membawa properti pribadi untuk menambah sentuhan personal dalam setiap foto. Di sini, kreativitas Anda diperbolehkan berkembang!.</div>
           </div>
         </div>
         <div class="accordion-item">
@@ -85,4 +85,10 @@
       </div>
     </div>
 </section>
+
+<style>
+  .contact button {
+    background: #cebbae !important;
+  }
+</style>
 @endsection

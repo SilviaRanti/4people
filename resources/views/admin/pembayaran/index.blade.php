@@ -48,7 +48,6 @@
             </div>
           </div>
         </div>
-
       </div>
 
       <div class="row">
@@ -61,7 +60,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+        <div class="col-md-6 mb-4 stretch-card transparent">
           <div class="card card-light-blue">
             <div class="card-body">
               <p class="mb-4">Transaksi Minggu Ini</p>
@@ -69,8 +68,8 @@
             </div>
           </div>
         </div>
-
       </div>
+
       <div class="row">
         <div class="col-md-6 stretch-card transparent">
           <div class="card card-light-danger">
@@ -88,45 +87,49 @@
       <div class="col-12 col-md-12">
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">Data Akun</h3>
+            <h3 class="card-title">Data Pembayaran</h3>
           </div>
-          <table class="table-hover table">
-            <thead>
-              <tr>
-                <th>Nomor</th>
-                <th>Nama</th>
-                <th>Harga</th>
-                <th>Status</th>
-                <th>Paket</th>
-                <th>Tanggal Booking</th>
-                <th>Jam Booking</th>
-                <th style="width: 120px">Aksi</th>
-              </tr>
-            </thead>
-            <tbody>
-              @foreach ($data['pembayaran'] as $c)
-              <tr>
-                <td>{{ $loop->iteration }}</td>
-                <td>{{ $c->nama }}</td>
-                <td>{{ Str::rupiah($c->harga) }}</td>
-                <td>{{ $c->status }}</td>
-                <td>{{ $c->service->nama }}</td>
-                <td>{{ $c->booking->tanggal_booking }}</td>
-                <td>{{ $c->booking->jam_booking }}</td>
-                <td>
-                  <div class="d-flex justify-content-between">
-                    <button data-toggle="modal" data-target="#modalEdit{{$c->id}}" class="btn btn-warning mr-1">Edit</button>
-                    <form action="{{ route('admin.bookings.destroy', $c->id) }}" method="post">
-                      @csrf
-                      @method('DELETE')
-                      <button type="submit" class="btn btn-danger show_confirm">Delete</button>
-                    </form>
-                  </div>
-                </td>
-              </tr>
-              @endforeach
-            </tbody>
-          </table>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table-hover table" id="myTable">
+                <thead>
+                  <tr>
+                    <th>Nomor</th>
+                    <th>Nama</th>
+                    <th>Harga</th>
+                    <th>Status</th>
+                    <th>Paket</th>
+                    <th>Tanggal Booking</th>
+                    <th>Jam Booking</th>
+                    <th style="width: 120px">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach ($data['pembayaran'] as $c)
+                  <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $c->nama }}</td>
+                    <td>{{ Str::rupiah($c->harga) }}</td>
+                    <td>{{ $c->status }}</td>
+                    <td>{{ $c->service->nama }}</td>
+                    <td>{{ $c->booking->tanggal_booking }}</td>
+                    <td>{{ $c->booking->jam_booking }}</td>
+                    <td>
+                      <div class="d-flex justify-content-between">
+                        <button data-toggle="modal" data-target="#modalEdit{{$c->id}}" class="btn btn-warning mr-1">Edit</button>
+                        <form action="{{ route('admin.bookings.destroy', $c->id) }}" method="post">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" class="btn btn-danger show_confirm">Delete</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                  @endforeach
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -193,6 +196,8 @@
   getWeatherData();
 
   $(document).ready(function() {
+    $('#myTable').DataTable();
+
     $('.show_confirm').click(function(event) {
       var form = $(this).closest("form");
       var name = $(this).data("name");

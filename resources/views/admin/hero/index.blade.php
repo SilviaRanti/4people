@@ -3,20 +3,20 @@
 <div class="content-wrapper">
   <div class="card">
     <div class="card-body">
-      <h4 class="card-title">Form Hero </h4>
+      <h4 class="card-title">Form Highlight</h4>
       <form class="forms-sample" method="post" action="{{ route('admin.hero.store') }}" enctype="multipart/form-data">
         @csrf
         <div class="row">
           <div class="form-group col-md-6">
-            <label for="judul">Judul Hero</label>
-            <input type="text" class="form-control @error('judul') is-invalid @enderror" id="judul" name="judul" placeholder="Masukan judul hero" value="{{ old('judul') }}">
+            <label for="judul">Judul</label>
+            <input type="text" class="form-control @error('judul') is-invalid @enderror" id="judul" name="judul" placeholder="Masukan judul" value="{{ old('judul') }}">
             @error('judul')
             <div class="invalid-feedback">{{ $message }}</div>
             @enderror
           </div>
           <div class="form-group col-md-6">
-            <label for="deskripsi">Deskripsi Hero</label>
-            <input type="text" class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi" name="deskripsi" placeholder="Masukan deskripsi hero" value="{{ old('deskripsi') }}">
+            <label for="deskripsi">Deskripsi</label>
+            <input type="text" class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi" name="deskripsi" placeholder="Masukan deskripsi" value="{{ old('deskripsi') }}">
             @error('deskripsi')
             <div class="invalid-feedback">{{ $message }}</div>
             @enderror
@@ -48,15 +48,15 @@
       <div class="col-12 col-md-12">
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">Data Hero</h3>
+            <h3 class="card-title">Data Highlight</h3>
           </div>
           <table class="table-hover table">
             <thead>
               <tr>
                 <th>Nomor</th>
-                <th>Judul Hero</th>
-                <th>Deskripsi Hero</th>
-                <th>Gambar Hero</th>
+                <th>Judul</th>
+                <th>Deskripsi</th>
+                <th>Gambar</th>
                 <th style="width: 120px">Aksi</th>
               </tr>
             </thead>
@@ -92,12 +92,12 @@
 </div>
 
 @foreach ($heros as $c)
-<!-- Modal Edit Hero -->
+<!-- Modal Edit -->
 <div class="modal fade" id="modalEdit{{$c->id}}" tabindex="-1" role="dialog" aria-labelledby="modalEditLabel{{$c->id}}" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalEditLabel{{$c->id}}">Edit Hero - {{ $c->nama }}</h5>
+        <h5 class="modal-title" id="modalEditLabel{{$c->id}}">Edit Highlight - {{ $c->nama }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -107,12 +107,12 @@
           @csrf
           @method('PUT')
           <div class="form-group">
-            <label for="judul">Judul Hero</label>
-            <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukkan judul hero" value="{{ $c->judul }}">
+            <label for="judul">Judul</label>
+            <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukan judul" value="{{ $c->judul }}">
           </div>
           <div class="form-group">
             <label for="deskripsi">Deskripsi Hero</label>
-            <input type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Masukkan deskripsi hero" value="{{ $c->deskripsi }}">
+            <input type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Masukan deskripsi" value="{{ $c->deskripsi }}">
           </div>
           <div class="form-group">
             <label>Pilih gambar</label>

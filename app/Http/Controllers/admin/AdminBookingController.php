@@ -45,53 +45,13 @@ class AdminBookingController extends Controller
    * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
-  public function store(Request $request)
-  {
-    // Validation rules for booking
-    $validator = Validator::make($request->all(), [
-      'pembooking' => 'required|string|max:255',
-      'no_hp' => 'required|string|max:20',
-      'tanggal_booking' => 'required|date',
-      'jam_booking' => 'required|date_format:H:i',
-      'service' => 'required|exists:services,id',
-    ]);
-
-    if ($validator->fails()) {
-      $errors = $validator->errors()->all();
-      foreach ($errors as $error) {
-        toastr()->newestOnTop(true)->addError($error);
-      }
-      return redirect()->back()->withErrors($validator)->withInput();
-    }
-
-    $tanggal_booking = Carbon::createFromFormat('m/d/Y', $request->tanggal_booking)->format('Y-m-d');
-    try {
-      // Create a new booking record
-      Booking::create([
-        'pembooking' => $request->input('pembooking'),
-        'no_hp' => $request->input('no_hp'),
-        'tanggal_booking' => $tanggal_booking,
-        'jam_booking' => $request->input('jam_booking'),
-        'id_service' => $request->input('service'),
-      ]);
-
-      toastr()->newestOnTop(true)->addSuccess('Berhasil tambah data booking');
-      return redirect()->back();
-    } catch (\Throwable $th) {
-      return throw $th;
-      toastr()->newestOnTop(true)->addError('Gagal tambah data booking!');
-      return redirect()->back();
-    }
-  }
-
-  // hanya 1 booking di jam itu
   // public function store(Request $request)
   // {
   //   // Validation rules for booking
   //   $validator = Validator::make($request->all(), [
   //     'pembooking' => 'required|string|max:255',
   //     'no_hp' => 'required|string|max:20',
-  //     'tanggal_booking' => 'required|date_format:m/d/Y', // Ensure the format matches your input
+  //     'tanggal_booking' => 'required|date',
   //     'jam_booking' => 'required|date_format:H:i',
   //     'service' => 'required|exists:services,id',
   //   ]);
@@ -104,20 +64,7 @@ class AdminBookingController extends Controller
   //     return redirect()->back()->withErrors($validator)->withInput();
   //   }
 
-  //   // Convert the date to Y-m-d format
   //   $tanggal_booking = Carbon::createFromFormat('m/d/Y', $request->tanggal_booking)->format('Y-m-d');
-
-  //   // Check for existing booking
-  //   $existingBooking = Booking::where('tanggal_booking', $tanggal_booking)
-  //     ->where('jam_booking', $request->jam_booking)
-  //     ->where('id_service', $request->service)
-  //     ->exists();
-
-  //   if ($existingBooking) {
-  //     toastr()->newestOnTop(true)->addError('This booking time is already taken.');
-  //     return redirect()->back()->withInput();
-  //   }
-
   //   try {
   //     // Create a new booking record
   //     Booking::create([
@@ -128,15 +75,68 @@ class AdminBookingController extends Controller
   //       'id_service' => $request->input('service'),
   //     ]);
 
-  //     toastr()->newestOnTop(true)->addSuccess('Successfully added booking data');
+  //     toastr()->newestOnTop(true)->addSuccess('Berhasil tambah data booking');
   //     return redirect()->back();
   //   } catch (\Throwable $th) {
-  //     // Note: It's not a good practice to expose detailed error information like this
-  //     // In production, consider logging the error and showing a generic error message to the user
-  //     toastr()->newestOnTop(true)->addError('Failed to add booking data!');
-  //     return redirect()->back()->withInput();
+  //     return throw $th;
+  //     toastr()->newestOnTop(true)->addError('Gagal tambah data booking!');
+  //     return redirect()->back();
   //   }
   // }
+
+  // hanya 1 booking di jam itu
+  public function store(Request $request)
+  {
+    // Validation rules for booking
+    $validator = Validator::make($request->all(), [
+      'pembooking' => 'required|string|max:255',
+      'no_hp' => 'required|string|max:20',
+      'tanggal_booking' => 'required|date_format:m/d/Y', // Ensure the format matches your input
+      'jam_booking' => 'required|date_format:H:i',
+      'service' => 'required|exists:services,id',
+    ]);
+
+    if ($validator->fails()) {
+      $errors = $validator->errors()->all();
+      foreach ($errors as $error) {
+        toastr()->newestOnTop(true)->addError($error);
+      }
+      return redirect()->back()->withErrors($validator)->withInput();
+    }
+
+    // Convert the date to Y-m-d format
+    $tanggal_booking = Carbon::createFromFormat('m/d/Y', $request->tanggal_booking)->format('Y-m-d');
+
+    // Check for existing booking
+    $existingBooking = Booking::where('tanggal_booking', $tanggal_booking)
+      ->where('jam_booking', $request->jam_booking)
+      ->exists();
+
+    if ($existingBooking) {
+      toastr()->newestOnTop(true)->addError('
+      Someone has already booked, look for other times or dates 🙏');
+      return redirect()->back()->withInput();
+    }
+
+    try {
+      // Create a new booking record
+      Booking::create([
+        'pembooking' => $request->input('pembooking'),
+        'no_hp' => $request->input('no_hp'),
+        'tanggal_booking' => $tanggal_booking,
+        'jam_booking' => $request->input('jam_booking'),
+        'id_service' => $request->input('service'),
+      ]);
+
+      toastr()->newestOnTop(true)->addSuccess('Successfully added booking data');
+      return redirect()->back();
+    } catch (\Throwable $th) {
+      // Note: It's not a good practice to expose detailed error information like this
+      // In production, consider logging the error and showing a generic error message to the user
+      toastr()->newestOnTop(true)->addError('Failed to add booking data!');
+      return redirect()->back()->withInput();
+    }
+  }
   /**
    * Display the specified resource.
    *

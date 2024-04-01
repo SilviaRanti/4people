@@ -9,14 +9,14 @@
         <div class="row">
           <div class="form-group col-md-6">
             <label for="nama">Nama</label>
-            <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" placeholder="Masukan nama hero" value="{{ old('nama') }}">
+            <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" placeholder="Masukan nama akun" value="{{ old('nama') }}">
             @error('nama')
             <div class="invalid-feedback">{{ $message }}</div>
             @enderror
           </div>
           <div class="form-group col-md-6">
             <label for="username">Username</label>
-            <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" placeholder="Masukan username hero" value="{{ old('username') }}">
+            <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" placeholder="Masukan username akun" value="{{ old('username') }}">
             @error('username')
             <div class="invalid-feedback">{{ $message }}</div>
             @enderror
@@ -115,11 +115,11 @@
           @method('PUT')
           <div class="form-group">
             <label for="nama">Nama</label>
-            <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" placeholder="Masukan nama hero" value="{{ $c->nama }}">
+            <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" placeholder="Masukan nama akun" value="{{ $c->nama }}">
           </div>
           <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" placeholder="Masukan username hero" value="{{ $c->username }}">
+            <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" placeholder="Masukan username akun" value="{{ $c->username }}">
           </div>
           <div class="form-group">
             <label for="password">Password</label>

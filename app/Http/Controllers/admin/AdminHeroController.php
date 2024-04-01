@@ -47,12 +47,11 @@ class AdminHeroController extends Controller
     $validator = Validator::make($request->all(), [
       'judul' => 'required|string|max:255',
       'deskripsi' => 'required|string|max:255',
-      'gambar' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
+      'gambar' => 'required|image|mimes:jpeg,png,jpg,webp',
     ], [
       'gambar.required' => 'Gambar wajib diunggah.',
       'gambar.image' => 'File harus berupa gambar.',
       'gambar.mimes' => 'Format gambar tidak sesuai. Pilih format jpeg, png, jpg, atau webp.',
-      'gambar.max' => 'Ukuran gambar tidak boleh melebihi 2 MB.',
     ]);
 
     if ($validator->fails()) {
@@ -127,11 +126,10 @@ class AdminHeroController extends Controller
     $validator = Validator::make($request->all(), [
       'judul' => 'required|string|max:255',
       'deskripsi' => 'required|string|max:255',
-      'gambar' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+      'gambar' => 'nullable|image|mimes:jpeg,png,jpg,webp',
     ], [
       'gambar.image' => 'File harus berupa gambar.',
       'gambar.mimes' => 'Format gambar tidak sesuai. Pilih format jpeg, png, jpg, atau webp.',
-      'gambar.max' => 'Ukuran gambar tidak boleh melebihi 2 MB.',
     ]);
 
     if ($validator->fails()) {
